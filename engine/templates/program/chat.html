@@ -1,0 +1,63 @@
+<!-- engine/templates/engine/states/chat.html -->
+
+<div class="mensajes" id="mensajes">
+
+</div>
+
+
+<script>
+// Seleccionar el contenedor de mensajes
+const contenedorMensajes = document.getElementById("mensajes");
+
+// Función para hacer scroll al final del contenedor
+
+
+// Función para obtener y añadir los mensajes al cargar la página
+// Función para obtener y añadir los mensajes al cargar la página
+// Función para obtener y añadir los mensajes al cargar la página
+async function messages() {
+    try {
+        // Llamar a la vista del backend para obtener los mensajes
+        const data = await sendBackendGetJson("chat_messages");
+        const mensajes = data.mensajes;
+
+        // Verificar si mensajes está vacío
+        if (!mensajes || Object.keys(mensajes).length === 0) {
+            console.log("No hay mensajes para mostrar.");
+            return;
+        }
+        console.log("Hay mensajes para mostrar.");
+        console.log(mensajes)
+
+        // Recorrer la lista de mensajes y añadir cada uno al contenedor de mensajes
+        Object.values(mensajes).forEach(function(mensaje) {
+            addMessageFromArray(mensaje);
+        });
+
+        scrollToBottom(contenedorMensajes);
+    } catch (error) {
+        console.error("Error al cargar los mensajes: ", error);
+    }
+}
+
+// Función para añadir un mensaje desde un arreglo de datos
+function addMessageFromArray(mensaje) {
+    // Extraer los valores de tiempo, origen y contenido del mensaje
+    const message_time = mensaje[0];
+    const origin = mensaje[1];
+    const content = mensaje[2];
+
+    // Determinar el tipo de mensaje para definir la clase correspondiente
+    let tipo;
+    if (origin === "Voice") {
+        tipo = "mensaje-emisor";
+    } else {
+        tipo = "mensaje-receptor";
+    }
+
+    // Crear el mensaje en el contenedor
+    addMessage(`${content}`, tipo);
+}
+
+
+</script>

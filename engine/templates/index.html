@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BridgeLink</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/anim_video_recording.css' %}">
+    <link rel="stylesheet" href="{% static 'css/anim_voice_recording.css' %}">
+    <link rel="stylesheet" href="{% static 'css/anim_text_to_speach.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/favicon.ico' %}">
+</head>
+<body>
+    <section class="main">
+    <div class="title">
+        <a class="no_format_url" href="#" onclick="setCase('await')">
+            BridgeLink
+        </a>
+    </div>
+    
+    <div class="program">
+        <div class="chat">
+            {% include "program/chat.html" %}
+        </div>
+        <div class="display">
+            <div class="state" id="state-container">
+
+            </div>
+            <div class="text" id="text-container">
+            </div>
+        </div>
+    </div>
+    
+    <audio id="audioPlayer" style="display: none;">
+        <source src="static/audio/tts.mp3" type="audio/mpeg">
+    </audio>
+
+
+
+    <div class="input">
+        {% include "input/input.html" %}
+    </div>
+    </section>
+    <script src="{% static 'js/main.js' %}"></script>
+    <script src="{% static 'js/utils.js' %}"></script>
+    <script src="{% static 'js/marked.min.js' %}"></script>
+
+
+    
+
+</body>
+</html>

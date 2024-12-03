@@ -1,0 +1,346 @@
+/* Estilos mejorados para un tema oscuro y minimalista */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.main {
+    height: 100vh;
+    width: 100%;
+    padding: 20px;
+}
+
+.title {
+    height: 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.no_format_url {
+    text-decoration: none;
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+}
+
+.program {
+    display: flex;
+    height: 70%;
+    padding: 8px;
+}
+
+.chat {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    gap: 10px;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+}
+
+.mensajes {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: #1e1e1e;
+}
+
+.mensaje {
+    max-width: 70%;
+    padding: 15px;
+    border-radius: 10px;
+    word-wrap: break-word;
+    position: relative;
+    font-size: 1em;
+    line-height: 1.5;
+}
+
+.mensaje-receptor {
+    background-color: #32303e;
+    align-self: flex-start;
+}
+
+.mensaje-emisor {
+    background-color: #374452;
+    align-self: flex-end;
+}
+
+.ul {
+    list-style-position: inside; /* Hace que los puntos de la lista se alineen con el texto */
+    margin-left: 20px; /* Indentación de la lista */
+    padding-left: 0; /* Quita el padding para evitar doble indentación */
+}
+
+.li {
+    margin-left: 10px; /* Espacio adicional para el texto de cada elemento */
+}
+
+.boton-bocina {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.2em;
+    color: #ffffff;
+}
+
+.mensaje-receptor .boton-bocina {
+    right: -40px;
+}
+
+.mensaje-emisor .boton-bocina {
+    left: -40px;
+}
+
+.mensajes::-webkit-scrollbar {
+    width: 6px;
+}
+
+.mensajes::-webkit-scrollbar-thumb {
+    background-color: #444444;
+    border-radius: 3px;
+}
+
+.display {
+    padding-left: 8px;
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+}
+
+.state {
+    height: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #1e1e1e;
+    margin-bottom: 10px;
+}
+
+.text {
+    padding: 20px;
+    height: 70%;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    background-color: #1e1e1e;
+    overflow: hidden;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+    height: 18%;
+}
+
+.written_message {
+    display: flex;
+    height: 50%;
+}
+
+
+.message_div {
+    padding: 8px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.console_state  {
+    width: 100%;
+    height: 100%;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 1rem;
+    border: 1px solid #444444;
+    background-color: #1e1e1e;
+    color: #696969; /* Color verde típico de consola */
+    display: flex;
+    align-items: center;
+}
+
+.interaction_buttons {
+    display: flex;
+    width: 100%;
+    height: 60%;
+}
+
+.button_container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+form {
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.LESSA_button_div,
+.VOICE_button_div,
+.cancel_input_button_div {
+    border: 1px solid #444444;
+    margin: 8px;
+    width: 100%;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-size: 1em;
+    padding: 15px;
+    text-align: center;
+}
+
+.LESSA_button_div {
+    background-color: #6a5acd;
+}
+
+.VOICE_button_div {
+    background-color: #1e90ff;
+}
+
+.cancel_input_button_div {
+    background-color: #555555;
+}
+
+.LESSA_button_div:hover,
+.VOICE_button_div:hover,
+.cancel_input_button_div:hover {
+    background-color: #ffffff20;
+}
+
+.loading {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+}
+
+.circle {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.circle1 {
+    background-color: #6a5acd;
+    animation: moveCircle1 3s infinite;
+}
+
+.circle2 {
+    background-color: #1e90ff;
+    animation: moveCircle2 3s infinite;
+}
+
+@keyframes moveCircle1 {
+    0% {
+        transform: translate(40px, 40px);
+    }
+    14.28% {
+        transform: translate(0px, 0px);
+    }
+    28.56% {
+        transform: translate(40px, 0px);
+    }
+    42.84% {
+        transform: translate(80px, 0px);
+    }
+    57.12% {
+        transform: translate(40px, 40px);
+    }
+    71.4% {
+        transform: translate(80px, 80px);
+    }
+    85.68% {
+        transform: translate(40px, 80px);
+    }
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+@keyframes moveCircle2 {
+    0% {
+        transform: translate(40px, 40px);
+    }
+    14.28% {
+        transform: translate(80px, 80px);
+    }
+    28.56% {
+        transform: translate(40px, 80px);
+    }
+    42.84% {
+        transform: translate(0px, 80px);
+    }
+    57.12% {
+        transform: translate(40px, 40px);
+    }
+    71.4% {
+        transform: translate(0px, 0px);
+    }
+    85.68% {
+        transform: translate(40px, 0px);
+    }
+    100% {
+        transform: translate(40px, 40px);
+    }
+}
+
+.await_await {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.await_circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+}
+
+.await_circle1 {
+    background-color: #6a5acd;
+}
+
+.await_circle2 {
+    background-color: #1e90ff;
+}

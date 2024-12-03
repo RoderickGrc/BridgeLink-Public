@@ -1,0 +1,54 @@
+
+/* ANIMACIONES DE LOS CÍRCULOS */
+
+.animation_container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+}
+
+.icon {
+    font-size: 3rem;
+    position: absolute;
+    z-index: 10;
+}
+
+.voice_circle_record {
+    position: absolute;
+    border-radius: 50%;
+    animation: pulse 3s infinite ease-in-out;
+}
+
+.voice_circle_1 {
+    width: 100px;
+    height: 100px;
+    background-color: rgba(0, 123, 255, 0.3);
+    animation-delay: 0s;
+}
+
+.voice_circle_2 {
+    width: 80px;
+    height: 80px;
+    background-color: rgba(0, 123, 255, 0.2);
+    animation-delay: 1s;
+}
+
+.voice_circle_3 {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 123, 255, 0.1);
+    animation-delay: 2s;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+}
